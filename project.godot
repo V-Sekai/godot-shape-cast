@@ -6,8 +6,10 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
 [application]
 
-run/main_scene="res://main.tscn"
+config/name="Godot Shape Cast Demo"
+run/main_scene="res://main_2d.tscn"
+config/features=PackedStringArray("4.0")

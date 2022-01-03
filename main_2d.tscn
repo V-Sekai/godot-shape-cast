@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd3dqoubt6qpm"]
+[gd_scene load_steps=5 format=3 uid="uid://bkfy4le1lcv36"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_c5wni"]
+[ext_resource type="Script" path="res://main_2d.gd" id="1_8t5u8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0us3s"]
 
@@ -13,7 +13,7 @@ radius = 128.0
 [node name="Node2D" type="Node2D"]
 z_index = -2
 z_as_relative = false
-script = ExtResource( "1_c5wni" )
+script = ExtResource( "1_8t5u8" )
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 position = Vector2(288, 301)
