@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b581gq0ai1iic"]
 
-[ext_resource type="Script" path="res://shape_cast_demo/core/main_2d.gd" id="1_tolmc"]
+[ext_resource type="Script" path="res://shape_cast_demo/core/main_3d.gd" id="1_pymsr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0us3s"]
 
@@ -13,7 +13,7 @@ radius = 128.0
 [node name="Node2D" type="Node2D"]
 z_index = -2
 z_as_relative = false
-script = ExtResource( "1_tolmc" )
+script = ExtResource( "1_pymsr" )
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 position = Vector2(288, 301)
