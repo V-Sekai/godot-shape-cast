@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b581gq0ai1iic"]
+
+[ext_resource type="Script" path="res://shape_cast_demo/core/main_2d.gd" id="1_tolmc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0us3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdxwe"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qt4ve"]
+radius = 128.0
+
+[node name="Node2D" type="Node2D"]
+z_index = -2
+z_as_relative = false
+script = ExtResource( "1_tolmc" )
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(288, 301)
+z_index = 4
+z_as_relative = false
+shape = SubResource( "CircleShape2D_0us3s" )
+target_position = Vector2(0, 128)
+
+[node name="Obstacle_A" type="StaticBody2D" parent="."]
+position = Vector2(320, 428)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle_A"]
+shape = SubResource( "RectangleShape2D_sdxwe" )
+
+[node name="Obstacle_B" type="StaticBody2D" parent="."]
+position = Vector2(451, 343)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle_B"]
+shape = SubResource( "CircleShape2D_qt4ve" )
+
+[node name="Debug" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
