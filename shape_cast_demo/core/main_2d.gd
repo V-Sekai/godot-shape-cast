@@ -4,7 +4,7 @@ extends Node3D
 func _physics_process(delta):
 	$Debug.text = ""
 	
-	var s: ShapeCast3D = $ShapeCast3D
+	var s: ShapeCast2D = $ShapeCast2D
 	
 	$Debug.text += "Colliding: %s\n" % s.is_colliding()
 	if s.is_colliding():
@@ -17,18 +17,18 @@ func _physics_process(delta):
 		$Debug.text += "Closest Collider: %s\n" % s.get_closest_collider()
 		$Debug.text += "Collision Safe fraction: %s\n" % s.get_closest_collision_safe_fraction()
 		$Debug.text += "Collision Unsafe fraction: %s\n" % s.get_closest_collision_unsafe_fraction()
-	force_update_transform()
+		
+	update()
 
 
 func _draw():
-	set_transform($ShapeCast3D.global_position)
-#	draw_line(Vector2(), $ShapeCast3D.target_position, Color.RED, 2)
+	draw_set_transform($ShapeCast2D.global_position)
+	draw_line(Vector2(), $ShapeCast2D.target_position, Color.RED, 2)
 
 
 func _input(event):
-	pass
-#	if event is InputEventMouseButton and event.pressed:
-#		if event.button_index == MOUSE_BUTTON_LEFT:
-#			$ShapeCast3D.global_position = get_global_mouse_position()
-#		elif event.button_index == MOUSE_BUTTON_RIGHT:
-#			$ShapeCast3D.target_position = get_global_mouse_position() - $ShapeCast3D.global_position
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			$ShapeCast2D.global_position = get_global_mouse_position()
+		elif event.button_index == MOUSE_BUTTON_RIGHT:
+			$ShapeCast2D.target_position = get_global_mouse_position() - $ShapeCast2D.global_position
